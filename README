@@ -1,6 +1,8 @@
 Common rc-like files for my linux environments
 ----------------------------------------------
 
-Working with lots of different linux environments results in a headache in managing terminals which aren't completely alien.
-This repostiory brings together all of my various rc files, so I can quickly depoly them to new machines that I work with.
+Working with lots of different linux environments results in a headache in managing terminals 
+which aren't completely alien.
 
+This repostiory brings together all of my various rc files, so I can quickly depoly 
+them to new machines that I work with.
