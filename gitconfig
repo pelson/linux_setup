@@ -1,0 +1,20 @@
+[user]
+    name = Phil Elson
+    email = pelson.pub@gmail.com
+[alias]
+        ci = commit -a
+        co = checkout
+        st = status
+        br = branch
+        wdiff = diff --color-words
+    vlog = log --graph --date-order --date=relative --pretty=format:\"%C(cyan)%h: %Cblue - %an - %Cgreen %C(cyan)%ar:%Creset%n%s%n\" --color
+
+[core]
+        editor = vim
+	pager = less -+F -+X
+
+[merge]
+        summary = true
+
+[diff]
+    tool = vimdiff
