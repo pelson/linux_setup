@@ -1,20 +1,35 @@
 [user]
     name = Phil Elson
     email = pelson.pub@gmail.com
+
 [alias]
-        ci = commit -a
-        co = checkout
-        st = status
-        br = branch
-        wdiff = diff --color-words
+    ci = commit -a
+    co = checkout
+    st = status
+    br = branch
+    wdiff = diff --color-words
     vlog = log --graph --date-order --date=relative --pretty=format:\"%C(cyan)%h: %Cblue - %an - %Cgreen %C(cyan)%ar:%Creset%n%s%n\" --color
 
+    explain = describe --all --contains
+
+    # Give us all branches sorted by age.
+    brage = "!f() { for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:'%Cgreen%ci %Cblue%cr%Creset' $k|head -n 1` \\\t$k; done | sort -r; }; f"
+
+    pr = "!f() {                                                                     \
+                PR=$1                                                          ;\
+                REMOTE=${2:-upstream}                                          ;\
+                git remote -v | grep $REMOTE | grep github >/dev/null          ;\
+                [ $? == 1 ] && REF=pull-requests/$PR/from || REF=pull/$PR/head ;\
+                git fetch -fu $REMOTE refs/$REF:pr/$PR                        &&\
+                git checkout pr/$PR                                            ;\
+               } ; f"
+
 [core]
-        editor = vim
+    editor = vim
 	pager = less -+F -+X
 
 [merge]
-        summary = true
+    summary = true
 
 [diff]
     tool = vimdiff

@@ -2,5 +2,8 @@ alias ll="ls -ltr"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+alias .....="cd ../../../.."
 alias c=clear
-alias la="ls -ltra" 
+alias la="ls -ltra"
+
+alias size="du --max-depth=1 -k | sort -nr | cut -f2 | xargs -d '\n' du -sh 2>/dev/null"
