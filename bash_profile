@@ -10,15 +10,13 @@ PS_HOST=$(hostname)
 PS_BLUE=$(tput setf 1)
 PS_GREEN=$(tput setf 2)
 PS_RED=$(tput setf 4)
-PS1='
-(${PS_BOLD}SUPERCOMP${PS_OFF}) ${PS_BOLD}${PWD}${PS_OFF}
+#PS1='
+#${PS_BOLD}${PWD}${PS_OFF}
+#
+#${PS_GREEN}${PS_USER}${PS_OFF}@${PS_RED}${PS_HOST}${PS_OFF}:> '
 
-${PS_GREEN}${PS_USER}${PS_OFF}@${PS_RED}${PS_HOST}${PS_OFF}:> '
 
-
-source ./pelson_rc
+source ~/.setup/pelson_rc
 
 alias conda_add="export PATH=~/envs/default/bin:$PATH"
-
-source ~/envs/default/bin/activate default
 
